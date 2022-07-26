@@ -66,6 +66,7 @@ require (
 	golang.org/x/tools v0.1.11
 	google.golang.org/api v0.76.0
 	gopkg.in/yaml.v2 v2.4.0
+	github.com/litao91/goldmark-mathjax v0.0.0-20210217064022-a43cf739a50f
 )
 
 require (
