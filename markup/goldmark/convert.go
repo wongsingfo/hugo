@@ -25,6 +25,9 @@ import (
 
 	"github.com/gohugoio/hugo/markup/converter"
 	"github.com/gohugoio/hugo/markup/tableofcontents"
+	
+	mathjax "github.com/litao91/goldmark-mathjax"
+	
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/extension"
 	"github.com/yuin/goldmark/parser"
@@ -135,6 +138,9 @@ func newMarkdown(pcfg converter.ProviderConfig) goldmark.Markdown {
 	if cfg.Parser.Attribute.Block {
 		extensions = append(extensions, attributes.New())
 	}
+	
+	// TODO: add parser flag
+	extensions = append(extensions, mathjax.MathJax)
 
 	md := goldmark.New(
 		goldmark.WithExtensions(
