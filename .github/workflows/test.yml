@@ -85,6 +85,7 @@ jobs:
         HUGO_IGNOREERRORS: error-remote-getjson
         HUGO_SERVICES_INSTAGRAM_ACCESSTOKEN: dummytoken
       run: |
+        go get github.com/litao91/goldmark-mathjax
         mage -v hugo
         ./hugo -s docs/
         ./hugo --renderToMemory -s docs/
