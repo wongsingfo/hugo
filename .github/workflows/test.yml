@@ -75,6 +75,7 @@ jobs:
         echo  "$env:GITHUB_WORKSPACE/sass_embedded/" | Out-File -FilePath $Env:GITHUB_PATH -Encoding utf-8 -Append
     - name: Check
       run: |
+        go get github.com/litao91/goldmark-mathjax
         mage -v check;
       env:
         HUGO_BUILD_TAGS: extended
